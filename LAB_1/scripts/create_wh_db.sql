@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS football_wr;
+CREATE DATABASE football_wr;
