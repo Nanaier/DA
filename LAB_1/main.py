@@ -32,7 +32,6 @@ stage_db = mysql.connect(
     password = "02042004",
     database = "football_stage"
 )
-
 cursor = stage_db.cursor()
 executeScriptsFromFile('scripts/create_stage.sql')
 stage_db.commit()
@@ -45,7 +44,6 @@ warehouse_db = mysql.connect(
     password = "02042004",
     database = "football_wr"
 )
-
 cursor = warehouse_db.cursor()
 executeScriptsFromFile('scripts/warehouse.sql')
 warehouse_db.commit()
