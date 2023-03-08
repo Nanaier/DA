@@ -32,10 +32,10 @@ CREATE TABLE DimResult (
 );
 
 CREATE TABLE DimTierDivision (
+  tier_div_sub_id INT PRIMARY KEY AUTO_INCREMENT,
   tier INT,
   division VARCHAR(50),
-  subdivision VARCHAR(50),
-  PRIMARY KEY (tier, division, subdivision)
+  subdivision VARCHAR(50)
 );
 
 CREATE TABLE FactMatches (
@@ -50,12 +50,10 @@ CREATE TABLE FactMatches (
   home_team_score_margin INT,
   away_team_score_margin INT,
   result_id INT,
-  tier INT,
-  division VARCHAR(50),
-  subdivision VARCHAR(50),
+  tier_div_sub_id INT,
   FOREIGN KEY (season_id) REFERENCES DimSeasons(season_id),
   FOREIGN KEY (team_home_id) REFERENCES DimTeams(team_id),
   FOREIGN KEY (team_away_id) REFERENCES DimTeams(team_id),
   FOREIGN KEY (result_id) REFERENCES DimResult(result_id),
-  FOREIGN KEY (tier, division, subdivision) REFERENCES DimTierDivision(tier, division, subdivision)
+  FOREIGN KEY (tier_div_sub_id) REFERENCES DimTierDivision(tier_div_sub_id)
 );
