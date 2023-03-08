@@ -44,7 +44,6 @@ CREATE TABLE FactMatches (
   match_name VARCHAR(100),
   team_home_id int,
   team_away_id int,
-  score VARCHAR(10),
   home_team_score INT,
   away_team_score INT,
   home_team_score_margin INT,

@@ -19,8 +19,8 @@ SELECT DISTINCT tier, division, subdivision
 FROM football_stage.Matches;
 
 
-INSERT INTO football_wr.FactMatches (season_id, match_name, team_home_id, team_away_id, score, home_team_score, away_team_score, home_team_score_margin, away_team_score_margin, result_id, tier_div_sub_id)
-SELECT s.season_id, m.match_name, th.team_id, ta.team_id, m.score, m.home_team_score, m.away_team_score, m.home_team_score_margin, m.away_team_score_margin, r.result_id, td.tier_div_sub_id
+INSERT INTO football_wr.FactMatches (season_id, match_name, team_home_id, team_away_id,  home_team_score, away_team_score, home_team_score_margin, away_team_score_margin, result_id, tier_div_sub_id)
+SELECT s.season_id, m.match_name, th.team_id, ta.team_id, m.home_team_score, m.away_team_score, m.home_team_score_margin, m.away_team_score_margin, r.result_id, td.tier_div_sub_id
 FROM football_stage.Matches m
 JOIN football_wr.DimSeasons s ON m.season_id = s.season_code
 JOIN football_wr.DimTeams ta ON m.away_team_id = ta.team_code
