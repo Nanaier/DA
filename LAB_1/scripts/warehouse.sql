@@ -1,16 +1,14 @@
 use football_wr;
-DROP TABLE IF EXISTS DimSeasons;
+DROP TABLE IF EXISTS DimYear;
 DROP TABLE IF EXISTS DimTeams;
+DROP TABLE IF EXISTS DimSeasons;
 DROP TABLE IF EXISTS DimResult;
 DROP TABLE IF EXISTS DimTierDivision;
 DROP TABLE IF EXISTS FactMatches;
 
-CREATE TABLE DimSeasons (
-  season_id INT PRIMARY KEY AUTO_INCREMENT,
-  season_code VARCHAR(20),
-  season_year INT,
-  winner VARCHAR(50),
-  count_teams INT
+CREATE TABLE DimYear(
+    year_id INT PRIMARY KEY AUTO_INCREMENT,
+    year INT
 );
 
 
@@ -25,6 +23,17 @@ CREATE TABLE DimTeams (
   first_appearance INT
 );
 
+
+CREATE TABLE DimSeasons (
+  season_id INT PRIMARY KEY AUTO_INCREMENT,
+  winner_id INT,
+  season_code VARCHAR(20),
+  season_year_id INT,
+  winner_name VARCHAR(50),
+  count_teams INT,
+  FOREIGN KEY (season_year_id) REFERENCES DimYear(year_id),
+  FOREIGN KEY (winner_id) REFERENCES DimTeams(team_id)
+);
 
 CREATE TABLE DimResult (
   result_id INT PRIMARY KEY AUTO_INCREMENT,
