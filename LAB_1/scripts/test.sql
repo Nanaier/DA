@@ -13,4 +13,4 @@ from football_stage.matches
 where (football_stage.matches.match_name = "Blackburn Rovers vs Darwen");
 
 
-call football_wr.scd_teams("Accrington1234", "Accrington12345");
+call football_wr.scd_teams("Accrington", "Accrington12345");

@@ -24,6 +24,7 @@ CREATE TABLE DimTeams
     defunct           tinyint(1),
     Load_Date         date not null DEFAULT '1000-01-01',
     End_Load_Date     date not null DEFAULT '3000-01-01',
+    previous          INT DEFAULT NULL,
     first_appearance  INT
 );
 

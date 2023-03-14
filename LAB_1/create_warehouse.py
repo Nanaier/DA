@@ -14,3 +14,4 @@ def create_warehouse():
     warehouse_db.commit()
     executeScriptsFromFile('scripts/connect.sql', cursor)
     warehouse_db.commit()
+

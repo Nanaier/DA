@@ -19,11 +19,11 @@ BEGIN
     IF old_id IS NULL THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Old team name has not been found!';
     ELSE
-        INSERT INTO dimteams (team_code, team_name, former_team_names, current, former, defunct, Load_Date,
+        INSERT INTO dimteams (team_code, team_name, former_team_names, current, former, defunct, Load_Date, previous,
                               first_appearance)
             VALUE (old_team_code, new_name,
                    IF(old_former_team_names = "None", old_name, CONCAT(old_former_team_names, "|", old_name)),
-                   old_current, old_former, old_defunct, CURRENT_DATE, old_first_appearance);
+                   old_current, old_former, old_defunct, CURRENT_DATE, old_id, old_first_appearance);
         UPDATE dimteams
         SET End_Load_Date = CURRENT_DATE
         WHERE team_id = old_id;
