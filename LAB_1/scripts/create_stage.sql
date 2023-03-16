@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Appearences;
 
 CREATE TABLE Seasons
 (
-    key_id      INT PRIMARY KEY,
+    key_id      INT PRIMARY KEY AUTO_INCREMENT,
     season_id   VARCHAR(10),
     season      INT,
     tier        INT,
@@ -20,7 +20,7 @@ CREATE TABLE Seasons
 
 CREATE TABLE Teams
 (
-    key_id            INT PRIMARY KEY,
+    key_id            INT PRIMARY KEY AUTO_INCREMENT,
     team_id           VARCHAR(10),
     team_name         VARCHAR(50),
     former_team_names VARCHAR(500),
@@ -32,7 +32,7 @@ CREATE TABLE Teams
 
 CREATE TABLE Matches
 (
-    key_id                 INT PRIMARY KEY,
+    key_id                 INT PRIMARY KEY AUTO_INCREMENT,
     season_id              VARCHAR(10),
     season                 INT,
     tier                   INT,

@@ -1,5 +1,6 @@
 use football_stage;
 
+
 INSERT INTO football_wr.DimYear(year)
 SELECT DISTINCT season
 FROM football_stage.Seasons s
@@ -25,7 +26,6 @@ SELECT DISTINCT dt.team_id, fss.season_id, dy.year_id, fss.winner, fss.count_tea
 FROM football_stage.Seasons fss
          JOIN football_wr.DimTeams dt ON dt.team_name = fss.winner
          JOIN football_wr.DimYear dy ON dy.year = fss.season;
-
 
 INSERT INTO football_wr.DimResult (result_id, result_name)
 VALUES (1, 'home team win'),
