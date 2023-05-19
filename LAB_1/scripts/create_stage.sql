@@ -1,9 +1,7 @@
 use football_stage;
 DROP TABLE IF EXISTS Seasons;
-DROP TABLE IF EXISTS Standings;
 DROP TABLE IF EXISTS Teams;
 DROP TABLE IF EXISTS Matches;
-DROP TABLE IF EXISTS Appearences;
 
 
 CREATE TABLE Seasons

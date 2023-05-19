@@ -1,5 +1,25 @@
 use football_stage;
 
+truncate matches ;
+truncate seasons ;
+truncate teams ;
+
+INSERT INTO football_stage.Teams
+    (team_id, team_name, former_team_names, current, former, defunct, first_appearance)
+VALUES
+    ("T-145","Anastasiia United","None",1,0,0,2021);
+
+
+INSERT INTO football_stage.Teams
+    (team_id, team_name, former_team_names, current, former, defunct, first_appearance)
+VALUES
+    ("T-146","Olena United","None",1,0,0,2021);
+
+INSERT INTO football_stage.Teams
+    (team_id, team_name, former_team_names, current, former, defunct, first_appearance)
+VALUES
+    ("T-135","Morecambe","None",1,0,0,2007);
+
 INSERT INTO football_wr.DimYear(year)
 SELECT DISTINCT season
 FROM football_stage.Seasons s

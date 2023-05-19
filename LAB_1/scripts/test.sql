@@ -31,6 +31,11 @@ INSERT INTO football_stage.Teams
 VALUES
     ("T-146","Olena United","None",1,0,0,2021);
 
+INSERT INTO football_stage.Teams
+    (team_id, team_name, former_team_names, current, former, defunct, first_appearance)
+VALUES
+    ("T-135","Morecambe","None",1,0,0,2007);
+
 INSERT INTO football_stage.matches
     (season_id, season, tier, division, subdivision, match_id, match_name, home_team_id, home_team_name,
      away_team_id, away_team_name, score, home_team_score, away_team_score, home_team_score_margin,
@@ -38,4 +43,6 @@ INSERT INTO football_stage.matches
 VALUES
     ("S-2022-1",2022,1,"First Division", "None","M-2022-1-001","Anastasiia United vs Olena United","T-145","Anastasiia United","T-146","Olena United","2-1",2,1,1,-1,"home team win",1,0,0
 );
+
+SELECT COUNT(match_id) FROM football_wr.factmatches;
 
